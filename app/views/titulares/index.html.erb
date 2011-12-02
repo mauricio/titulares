@@ -1,0 +1,11 @@
+<h2>Titulares</h2>
+
+<p>
+  <%=  link_to 'Novo Titular', new_titular_path %>
+</p>
+
+<ul>
+<% @titulares.each do |titular| %>
+    <li><%= titular.nome %> <%=  link_to 'Editar', edit_titular_path( titular ) %> </li>
+<% end %>
+</ul>

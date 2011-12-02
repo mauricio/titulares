@@ -1,0 +1,17 @@
+<%= form_for @titular do |f| %>
+
+    <p>
+      Nome: <%= f.text_field :nome %>
+    </p>
+    
+    <%=  f.fields_for :usuario_attributes, @titular.usuario || @titular.build_usuario do |u| %>
+        <p>
+          Email: <%=  u.text_field :email %>
+        </p>
+    <% end %>
+    
+    <p>
+      <%= f.submit 'Enviar' %>
+    </p>
+    
+<% end %>
